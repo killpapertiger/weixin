@@ -34,7 +34,7 @@ module.exports = {
    */
   weRunData: async (ctx, next) => {
     let auth = ctx.get('Auth')
-    if (!auth || auth === '[object Undefined]' || toString.call(auth) !== '[object String]') {
+    if (!auth || auth === '[object Undefined]' || Object.prototype.toString.call(auth) !== '[object String]') {
       ctx.body = {
         code: 551,
         errMessage: '用户未登录'

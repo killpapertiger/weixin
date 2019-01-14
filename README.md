@@ -19,5 +19,5 @@
 ![关注微信测试号体验](http://wx.yinchunyu.com/images/ceshihao.jpg)
 
 #### 小程序 (小程序demo移步至：https://github.com/yinMrsir/xcx-cli)
-- [√] 登录
-- [√] 获取微信步数
+- [√] 登录接口
+- [√] 获取微信步数接口
