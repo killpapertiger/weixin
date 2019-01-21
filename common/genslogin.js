@@ -1,9 +1,10 @@
 const crypto = require('crypto')
-const secret = 'weixin-2019-01'
-const algorithm = 'aes256'
+const algorithm = 'aes-128-cbc'
+const key = Buffer.from('9vApxLk5G3PAsJrM', 'utf8');
+const iv = Buffer.from('FnJL7EDzjqWjcaY9', 'utf8');
 
 function encode (id) {
-  const encoder = crypto.createCipher(algorithm, secret);
+  const encoder = crypto.createCipheriv(algorithm, key, iv);
   const str = [id, Date.now(), 'weixin2019'].join('|')
   let encrypted = encoder.update(str, 'utf8', 'hex')
   encrypted += encoder.final('hex')
@@ -11,7 +12,7 @@ function encode (id) {
 }
 
 function decode(str) {
-  const decoder = crypto.createDecipher(algorithm, secret)
+  const decoder = crypto.createDecipheriv(algorithm, key, iv)
   let decoded = decoder.update(str, 'hex', 'utf8')
   decoded += decoder.final('utf8')
   const arr = decoded.split('|')
