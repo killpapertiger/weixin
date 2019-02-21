@@ -10,9 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "crypto": "^1.0.1",
+    "gbk": "^0.1.0",
+    "iconv-lite": "^0.4.24",
     "jsonwebtoken": "^8.4.0",
     "jssha": "^2.3.1",
-    "koa": "^2.6.2",
+    "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-jwt": "^3.5.1",
     "koa-nunjucks-2": "^3.0.2",
