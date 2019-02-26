@@ -10,7 +10,7 @@ const router = require('./router')
 const app = new Koa()
 app.keys = ['weixin']
 
-app.use(staticFiles(path.resolve(__dirname, "web/public")))
+app.use(staticFiles(path.resolve(__dirname, "public")))
 app.use(nunjucks({
   ext: 'html',
   path: path.join(__dirname, 'web/views'),

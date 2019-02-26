@@ -9,5 +9,6 @@ xcx.post('/login', xcxController.login)
   .get('/ymt/intitleJsonForWap',ymt.intitleJsonForWap)
   .post('/ymt/addEatType', eatType.addEatType)
   .get('/ymt/getEatTypeList', eatType.getEatTypeList)
+  .get('/ymt/deteleEatType', eatType.deteleEatType)
 
 module.exports = xcx
