@@ -1,7 +1,13 @@
 var charset = require('superagent-charset')
 var superagent = charset(require('superagent'))
+var eatType = require('./eatType')
 
 module.exports = {
+  /**
+   * 免费取名接口
+   * @param ctx
+   * @returns {Promise<void>}
+   */
   intitleJsonForWap: async (ctx) => {
     let query = ctx.query
     let result = await intitle(query.wordsCount, query.sex, query.xing)
