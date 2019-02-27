@@ -8,10 +8,12 @@ module.exports = {
     }
   },
   getContentList: async (ctx) => {
-    let result = await getContentList()
+    let { parentId, id } = ctx.request.query
+    let obj = parentId ? {parentId} : id ? {_id: id} : {}
+    let result = await getContentList(obj)
     ctx.body = {
       code: 200,
-      result
+      result: id ? result[0] : result
     }
   },
   deteleContentList: async (ctx) => {
