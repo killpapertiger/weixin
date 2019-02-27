@@ -2,14 +2,15 @@ var {addEatType, getEatTypeList, deteleEatType} = require('../../../lib/ymt/eatT
 
 module.exports = {
   addEatType:async (ctx) => {
-    let {imgUrl, typeName} = ctx.request.body
-    await addEatType({imgUrl, typeName})
+    let {parentId, imgUrl, typeName} = ctx.request.body
+    await addEatType({parentId, imgUrl, typeName})
     ctx.body = {
       code: 200
     }
   },
   getEatTypeList: async (ctx) => {
-    let result = await getEatTypeList()
+    let { parentId } = ctx.query
+    let result = await getEatTypeList(parentId ? { parentId } : {})
     ctx.body = {
       code: 200,
       result

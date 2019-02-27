@@ -4,7 +4,6 @@ const weixin = require('./weixin')
 const xcx = require('./xcx')
 const admin = require('./admin')
 const multer = require('koa-multer')
-const path = require('path')
 
 var storage = multer.diskStorage({
   //文件保存路径
